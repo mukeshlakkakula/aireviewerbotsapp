@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Import burger and close icons
-
+import Image from "next/image";
+import ailogo from "./favicon-96x96.png";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false); // State for menu toggle
 
@@ -12,10 +13,12 @@ export default function Header() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo or Home Link */}
         <Link href="/" className="text-2xl font-bold flex items-center">
-          <img
-            src="http://localhost:3000/favicon.ico"
+          <Image
+            src={ailogo}
             alt="Logo"
-            className="h-8 w-8 mr-2"
+            width={40}
+            height={40}
+            unoptimized // Bypasses Next.js image optimization for this image
           />
           AI Website Hub
         </Link>
