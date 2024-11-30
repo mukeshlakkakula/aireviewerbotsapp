@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { loginUser } from "../../utils/appwrite";
+import { loginUser } from "@/utils/appwrite";
 
 export default function Login() {
   const [email, setEmail] = useState("");

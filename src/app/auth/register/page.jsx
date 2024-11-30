@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { registerUser } from "../../utils/appwrite";
+import { registerUser } from "@/utils/appwrite";
 
 export default function Register() {
   const [email, setEmail] = useState("");
