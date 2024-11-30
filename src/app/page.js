@@ -3,6 +3,7 @@
 // src/app/admin/dashboard.js
 import { useState, useEffect } from "react";
 import WebsiteCard from "@/components/WebsiteCard";
+import Header from "@/components/Header";
 
 export default function AdminDashboard() {
   const [websites, setWebsites] = useState([]);
@@ -36,13 +37,16 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Know Your Bots</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {websites.map((website) => (
-          <WebsiteCard key={website.id} website={website} />
-        ))}
+    <>
+      <Header />
+      <div className="p-6">
+        <h1 className="text-3xl font-bold mb-6">Know Your Bots</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {websites.map((website) => (
+            <WebsiteCard key={website.id} website={website} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
